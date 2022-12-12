@@ -1,0 +1,60 @@
+package com.roomservice;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+
+import com.roomservice.exception.RoomNotFoundException;
+import com.roomservice.model.Room;
+import com.roomservice.repository.RoomRepository;
+import com.roomservice.service.RoomService;
+
+@SpringBootTest
+class RoomServiceApplicationTests {
+
+	@Autowired
+	private RoomService service;
+
+	@MockBean
+	private RoomRepository roomRepository;
+
+	@Test
+	public void ShowAllRoomTest() throws RoomNotFoundException {
+		List<Room> room = new ArrayList<>();
+
+		Room r = new Room();
+
+		r.setRoomNumber(1);
+		r.setRoomStatus(true);
+		r.setTotalRooms(100);
+
+		room.add(r);
+
+		when(roomRepository.findAll()).thenReturn(room);
+		assertEquals(1, service.showAllRoom().size());
+	}
+
+	@Test
+	public void showRoomDetailsByIdTest() throws RoomNotFoundException {
+		Room r = new Room();
+
+		r.setRoomNumber(1);
+		r.setRoomStatus(true);
+		r.setTotalRooms(100);
+		
+
+		Optional<Room> room = Optional.of(r);
+
+		when(roomRepository.findById(1)).thenReturn(room);
+		assertEquals(r, service.showRoomById(1));
+	}
+
+}

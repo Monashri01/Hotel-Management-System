@@ -1,0 +1,23 @@
+package com.staff.feignclient;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+
+import com.security.entity.User;
+import com.security.model.AuthenticationRequest;
+
+public interface StaffAuthClient {
+	@PostMapping("/register")
+	public String showRegister(@RequestBody User user) ;
+
+	@PostMapping("/login")
+	public String createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest)
+			throws Exception ;
+
+	@GetMapping("/validate")
+	public ResponseEntity<?> getValidity(@RequestHeader("Authorization") String token);
+	
+}

@@ -1,0 +1,38 @@
+package com.owner.service.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.owner.service.exception.InventoryNotFoundException;
+import com.owner.service.feignclient.InventoryFeignClient;
+import com.owner.service.model.Inventory;
+
+
+
+@RestController
+@RequestMapping("/owner")
+public class InventoryManagerController {
+	@Autowired
+	private InventoryFeignClient inventoryClient;
+	
+	@PostMapping("/addInventory")
+	public ResponseEntity<Inventory> addInventoryDetails(@RequestBody Inventory inventoryDetails) throws InventoryNotFoundException {
+		return inventoryClient.addInventoryDetails(inventoryDetails);
+	}
+	@PutMapping("/updateInventory")
+	public ResponseEntity<Inventory> updateInventoryDetails(@RequestBody Inventory inventoryDetails) throws InventoryNotFoundException{
+		return inventoryClient.updateInventoryDetails(inventoryDetails);
+	}
+	@DeleteMapping("/deleteInventory/{id}")
+	public ResponseEntity<String> deleteInventoryDetails(@PathVariable("id") int id) throws InventoryNotFoundException{
+		return inventoryClient.deleteInventoryDetails(id);
+	}
+
+}

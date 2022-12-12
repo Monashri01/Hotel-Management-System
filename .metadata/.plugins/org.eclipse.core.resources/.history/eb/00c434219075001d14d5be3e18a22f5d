@@ -1,0 +1,5 @@
+package com.rate.service.exception;
+
+public class RateNotFoundException {
+
+}

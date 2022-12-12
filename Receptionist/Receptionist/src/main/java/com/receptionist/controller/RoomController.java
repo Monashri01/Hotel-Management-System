@@ -1,0 +1,56 @@
+package com.receptionist.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
+
+
+import com.receptionist.exception.RoomNotFoundException;
+import com.receptionist.feignclient.RoomFeignClient;
+import com.receptionist.model.Room;
+
+@RestController
+@RequestMapping("/receptionist")
+
+public class RoomController {
+
+	@Autowired
+	private RoomFeignClient roomFeignClient;
+
+	@Autowired
+	private RoomAuthService roomAuthService;
+
+	@GetMapping("/allroom")
+	public ResponseEntity<List<Room>> showAllRoom(@RequestHeader("Authorization") String token) {
+		try {
+			if (roomAuthService.isSessionValid(token)) {
+				return roomFeignClient.showAllRoom();
+			}
+			throw new ResponseStatusException(HttpStatus.FORBIDDEN, "You are Unauthorized!...");
+		} catch (Exception e) {
+			throw new ResponseStatusException(HttpStatus.FORBIDDEN, "You are Unauthorized!...");
+		}
+	}
+
+	@GetMapping("/showroom/{id}")
+	public ResponseEntity<Room> showRoomById(@PathVariable("id") int id, @RequestHeader("Authorization") String token)
+			throws RoomNotFoundException {
+		try {
+			if (roomAuthService.isSessionValid(token)) {
+				return roomFeignClient.showRoomDetailsById(id);
+			}
+			throw new ResponseStatusException(HttpStatus.FORBIDDEN, "You are Unauthorized!...");
+		} catch (Exception e) {
+			throw new ResponseStatusException(HttpStatus.FORBIDDEN, "You are Unauthorized!...");
+		}
+	}
+
+}

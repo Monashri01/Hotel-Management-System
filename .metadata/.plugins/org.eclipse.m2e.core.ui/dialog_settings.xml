@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\smonashr\Downloads\sts-4.16.1.RELEASE\Hotel-Management-System\Auth-Service"/>
+			<item value="C:\Users\smonashr\Downloads\sts-4.16.1.RELEASE\Hotel-Management-System\Receptionist"/>
+			<item value="C:\Users\smonashr\Downloads\sts-4.16.1.RELEASE\Hotel-Management-System\ManagerEndUser"/>
+			<item value="C:\Users\smonashr\Downloads\sts-4.16.1.RELEASE\Hotel-Management-System\Manager"/>
+			<item value="C:\Users\smonashr\Downloads\sts-4.16.1.RELEASE\Hotel-Management-System\GuestService"/>
+			<item value="C:\Users\smonashr\Downloads\sts-4.16.1.RELEASE\Hotel-Management-System\StaffService"/>
+			<item value="C:\Users\smonashr\Downloads\sts-4.16.1.RELEASE\Hotel-Management-System\RoomService"/>
+			<item value="C:\Users\smonashr\Downloads\sts-4.16.1.RELEASE\Hotel-Management-System\InventoryService"/>
+			<item value="C:\Users\smonashr\Downloads\sts-4.16.1.RELEASE\Hotel-Management-System\ReservationService"/>
+			<item value="C:\Users\smonashr\Downloads\sts-4.16.1.RELEASE\Hotel-Management-System\CropDetailsService (1)"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>

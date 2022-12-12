@@ -1,0 +1,15 @@
+package com.staff.feignclient;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
+import org.springframework.web.bind.annotation.RequestHeader;
+
+
+import com.staff.model.AuthenticationResponse;
+
+public interface StaffAuthClient {
+	
+    @GetMapping("/validate")
+	public AuthenticationResponse getValidity(@RequestHeader("Authorization") String token);
+	
+}

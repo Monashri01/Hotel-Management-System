@@ -1,0 +1,11 @@
+package com.rate.service.model;
+
+import org.springframework.data.annotation.Id;
+
+public class RateDetails {
+	@Id
+	private int rateId;
+	private float price;
+	
+
+}

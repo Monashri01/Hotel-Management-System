@@ -1,0 +1,70 @@
+package com.guestservice;
+
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+
+import com.guestservice.exception.GuestNotFoundException;
+import com.guestservice.model.GuestDetails;
+import com.guestservice.repository.GuestDetailsRepository;
+import com.guestservice.service.GuestDetailsService;
+
+@SpringBootTest
+class GuestServiceApplicationTests {
+	@Autowired
+    private GuestDetailsService service;
+
+   @MockBean
+    private GuestDetailsRepository repository;
+    
+    @Test
+    void addGuestTest() throws GuestNotFoundException {
+        GuestDetails guest = new GuestDetails(1,"abcc","8875380436",'F',"abc@gmail.com","Coimbatore");
+        when(repository.save(guest)).thenReturn(guest);
+        GuestDetails g =service.addGuestDetails(guest);
+        assertEquals(guest.getGuestId(),g.getGuestId());
+    }
+   /* @Test
+     void getCropTest() {
+        when(croprepo.findAll()).thenReturn(Stream.of(new Crop(123,"abcd","organic","3kg", null,"700"),
+                new Crop(321,"cba","organic","6kg", null,"600"))
+                .collect(Collectors.toList()));
+        assertEquals(2, service.getcrop().size());
+    }*/
+    @Test
+    void deleteGuestByIdTest() throws GuestNotFoundException {
+       String guest = GuestDetails(9, "xyz","9075431346", 'M',"xyz2gmail.com","London");
+       service.deleteGuestDetails(9);
+       verify(repository, times(1)).deleteById(9);
+   }
+
+
+
+  private String GuestDetails(int i, String string, String string2, char c, String string3, String string4) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+private String Farmer(int id, String string, String string2, String string3, Object object1,Object object2) {
+   // TODO Auto-generated method stub
+   return null;
+}
+   
+   
+  /* @Test
+    void getCropByIdTest() {
+       int id=2;
+       service.getcropById(id);
+       verify(croprepo).findById(id);
+   }*/
+
+
+
+
+}

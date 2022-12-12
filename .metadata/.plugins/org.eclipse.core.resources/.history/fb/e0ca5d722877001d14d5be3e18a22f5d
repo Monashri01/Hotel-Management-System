@@ -1,0 +1,53 @@
+package com.owner.service.controller;
+
+
+import java.util.List;
+
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+
+
+
+@RestController
+@RequestMapping("/receptionist")
+public class GuestDetailsController {
+	
+	@Autowired
+	private com.owner.service.feignclient.GuestFeignClient guestFeignClient;
+	
+	@GetMapping("/all")
+	public ResponseEntity<List<com.owner.service.model.GuestDetails>> showAllGuest(){
+     		return guestFeignClient.showAllGuestDetails();
+	}
+	
+	@GetMapping("/guest/{id}")
+	public ResponseEntity<com.owner.service.model.GuestDetails> showGuestById(@PathVariable("id") int id) throws GuestNotFoundException {
+			return guestFeignClient.showById(id);
+	}
+	
+	@PostMapping("/add")
+	public ResponseEntity<GuestDetails> addGuest(@RequestBody GuestDetails guestDetails) throws GuestNotFoundException {
+		return guestFeignClient.addGuest(guestDetails);
+	}
+	
+	@PutMapping("/update")
+	public ResponseEntity<GuestDetails> updateGuest(@RequestBody GuestDetails guestDetails) throws GuestNotFoundException{
+		return guestFeignClient.updateGuest(guestDetails);
+	}
+	
+	@DeleteMapping("/deleteguest/{id}")
+	public ResponseEntity<String> deleteGuest(@PathVariable("id") int id) throws GuestNotFoundException{
+		return guestFeignClient.deleteGuest(id);
+	}
+}

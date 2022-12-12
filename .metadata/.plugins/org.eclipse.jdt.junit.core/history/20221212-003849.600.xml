@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="StaffServiceApplicationTests" project="Staff-Service" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="com.staff.StaffServiceApplicationTests" time="0.043" displayname="StaffServiceApplicationTests" uniqueid="[engine:junit-jupiter]/[class:com.staff.StaffServiceApplicationTests]">
+    <testcase name="deleteStaffTest" classname="com.staff.StaffServiceApplicationTests" time="0.015" displayname="deleteStaffTest()" uniqueid="[engine:junit-jupiter]/[class:com.staff.StaffServiceApplicationTests]/[method:deleteStaffTest()]"/>
+    <testcase name="updateStaffTest" classname="com.staff.StaffServiceApplicationTests" time="0.008" displayname="updateStaffTest()" uniqueid="[engine:junit-jupiter]/[class:com.staff.StaffServiceApplicationTests]/[method:updateStaffTest()]"/>
+    <testcase name="ShowAllStaffTest" classname="com.staff.StaffServiceApplicationTests" time="0.007" displayname="ShowAllStaffTest()" uniqueid="[engine:junit-jupiter]/[class:com.staff.StaffServiceApplicationTests]/[method:ShowAllStaffTest()]"/>
+    <testcase name="addStaffTest" classname="com.staff.StaffServiceApplicationTests" time="0.007" displayname="addStaffTest()" uniqueid="[engine:junit-jupiter]/[class:com.staff.StaffServiceApplicationTests]/[method:addStaffTest()]"/>
+  </testsuite>
+</testrun>

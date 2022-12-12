@@ -1,0 +1,5 @@
+package com.manager.feignclient;
+
+public interface RoomAuthClient {
+
+}
