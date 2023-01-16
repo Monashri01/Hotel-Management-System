@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 
 import com.manager.exception.RoomNotFoundException;
 import com.manager.model.Room;
@@ -19,20 +20,20 @@ import com.manager.model.Room;
 public interface RoomFeignClient {
 	
 	 @GetMapping("/all")
-	    public ResponseEntity<List<Room>> showAllRoom();
+	    public ResponseEntity<List<Room>> showAllRoom(@RequestHeader("Authorization") String token);
 
 	   @GetMapping("/{id}")
-	    public ResponseEntity<Room> showById(@PathVariable("id") int id) throws RoomNotFoundException;
+	    public ResponseEntity<Room> showById(@PathVariable("id") int id,@RequestHeader("Authorization") String token) throws RoomNotFoundException;
 
 	    @PostMapping("/addroom")
-		public ResponseEntity<Room> addRoomDetails(@RequestBody Room roomDetails) throws RoomNotFoundException;
+		public ResponseEntity<Room> addRoomDetails(@RequestBody Room roomDetails,@RequestHeader("Authorization") String token) throws RoomNotFoundException;
 			
 		
 	    @PutMapping("/updateroom")
-		public ResponseEntity<Room> updateRoomDetails(@RequestBody Room roomDetails) throws RoomNotFoundException;
+		public ResponseEntity<Room> updateRoomDetails(@RequestBody Room roomDetails,@RequestHeader("Authorization") String token) throws RoomNotFoundException;
 		
 	    @DeleteMapping("/deleteroom/{id}")
-		public ResponseEntity<String> deleteRoomDetails(@PathVariable("id") int id) throws RoomNotFoundException;
+		public ResponseEntity<String> deleteRoomDetails(@PathVariable("id") int id,@RequestHeader("Authorization") String token) throws RoomNotFoundException;
 		
 	}
 

@@ -1,7 +1,0 @@
-@FeignClient(name="Authentication", url= "http://localhost:9999/auth")
-    public interface GuestAuthClient {
-        
-        @GetMapping("/validate")
-        public AuthenticationResponse getValidity(@RequestHeader("Authorization") String token) ;
-        
-        }

@@ -2,7 +2,6 @@ package com.receptionist.feignclient;
 
 import java.util.List;
 
-
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -11,29 +10,33 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 
 import com.receptionist.exception.ReservationNotFoundException;
 import com.receptionist.model.Reservation;
 
 @FeignClient(name = "reservation-service", url = "http://localhost:8082/reservation")
 public interface ReservationFeignClient {
+	@GetMapping("/roomprice/{roomType}")
+	public String getPrice(@PathVariable("roomType") String roomType, @RequestHeader("Authorization") String token);
 
 	@GetMapping("/all")
-	public ResponseEntity<List<Reservation>> showAllReservation();
+	public ResponseEntity<List<Reservation>> showAllReservation(@RequestHeader("Authorization") String token);
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Reservation> showById(@PathVariable("id") int id) 
-			throws ReservationNotFoundException;
+	public ResponseEntity<Reservation> showById(@PathVariable("id") int id,
+			@RequestHeader("Authorization") String token) throws ReservationNotFoundException;
 
 	@PostMapping("/add")
-	public ResponseEntity<Reservation> addReservation(@RequestBody Reservation reservation)
-			throws ReservationNotFoundException;
+	public ResponseEntity<Reservation> addReservation(@RequestBody Reservation reservation,
+			@RequestHeader("Authorization") String token) throws ReservationNotFoundException;
 
 	@PutMapping("/update")
-	public ResponseEntity<Reservation> updateReservation(@RequestBody Reservation reservation)
-			throws ReservationNotFoundException;
+	public ResponseEntity<Reservation> updateReservation(@RequestBody Reservation reservation,
+			@RequestHeader("Authorization") String token) throws ReservationNotFoundException;
 
 	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<String> deleteReservation(@PathVariable("id") int id) throws ReservationNotFoundException;
+	public ResponseEntity<String> deleteReservation(@PathVariable("id") int id,
+			@RequestHeader("Authorization") String token) throws ReservationNotFoundException;
 
 }

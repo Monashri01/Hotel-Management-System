@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="RoomServiceApplicationTests" project="RoomService" tests="3" started="3" failures="0" errors="0" ignored="0">
-  <testsuite name="com.roomservice.RoomServiceApplicationTests" time="0.074" displayname="RoomServiceApplicationTests" uniqueid="[engine:junit-jupiter]/[class:com.roomservice.RoomServiceApplicationTests]">
-    <testcase name="showRoomDetailsByIdTest" classname="com.roomservice.RoomServiceApplicationTests" time="0.055" displayname="showRoomDetailsByIdTest()" uniqueid="[engine:junit-jupiter]/[class:com.roomservice.RoomServiceApplicationTests]/[method:showRoomDetailsByIdTest()]"/>
-    <testcase name="ShowAllRoomTest" classname="com.roomservice.RoomServiceApplicationTests" time="0.009" displayname="ShowAllRoomTest()" uniqueid="[engine:junit-jupiter]/[class:com.roomservice.RoomServiceApplicationTests]/[method:ShowAllRoomTest()]"/>
-    <testcase name="addRoomDetailsTest" classname="com.roomservice.RoomServiceApplicationTests" time="0.006" displayname="addRoomDetailsTest()" uniqueid="[engine:junit-jupiter]/[class:com.roomservice.RoomServiceApplicationTests]/[method:addRoomDetailsTest()]"/>
-  </testsuite>
-</testrun>

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 
 import com.owner.service.exception.ReservationNotFoundException;
 import com.owner.service.model.Reservation;
@@ -21,21 +22,21 @@ import com.owner.service.model.Reservation;
 public interface ReservationFeignClient {
 
 	@GetMapping("/all")
-	public ResponseEntity<List<Reservation>> showAllReservation();
+	public ResponseEntity<List<Reservation>> showAllReservation(@RequestHeader("Authorization") String token);
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Reservation> showById(@PathVariable("id") int id) 
+	public ResponseEntity<Reservation> showById(@PathVariable("id") int id,@RequestHeader("Authorization") String token) 
 			throws ReservationNotFoundException;
 
 	@PostMapping("/add")
-	public ResponseEntity<Reservation> addReservation(@RequestBody Reservation reservation)
+	public ResponseEntity<Reservation> addReservation(@RequestBody Reservation reservation,@RequestHeader("Authorization") String token)
 			throws ReservationNotFoundException;
 
 	@PutMapping("/update")
-	public ResponseEntity<Reservation> updateReservation(@RequestBody Reservation reservation)
+	public ResponseEntity<Reservation> updateReservation(@RequestBody Reservation reservation,@RequestHeader("Authorization") String token)
 			throws ReservationNotFoundException;
 
 	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<String> deleteReservation(@PathVariable("id") int id) throws ReservationNotFoundException;
+	public ResponseEntity<String> deleteReservation(@PathVariable("id") int id,@RequestHeader("Authorization") String token) throws ReservationNotFoundException;
 
 }

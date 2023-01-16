@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="GuestServiceApplicationTests" project="GuestService" tests="5" started="5" failures="0" errors="0" ignored="0">
-  <testsuite name="com.guestservice.GuestServiceApplicationTests" time="0.1" displayname="GuestServiceApplicationTests" uniqueid="[engine:junit-jupiter]/[class:com.guestservice.GuestServiceApplicationTests]">
-    <testcase name="ShowAllGuestTest" classname="com.guestservice.GuestServiceApplicationTests" time="0.051" displayname="ShowAllGuestTest()" uniqueid="[engine:junit-jupiter]/[class:com.guestservice.GuestServiceApplicationTests]/[method:ShowAllGuestTest()]"/>
-    <testcase name="updateFarmerTest" classname="com.guestservice.GuestServiceApplicationTests" time="0.016" displayname="updateFarmerTest()" uniqueid="[engine:junit-jupiter]/[class:com.guestservice.GuestServiceApplicationTests]/[method:updateFarmerTest()]"/>
-    <testcase name="addGuestTest" classname="com.guestservice.GuestServiceApplicationTests" time="0.009" displayname="addGuestTest()" uniqueid="[engine:junit-jupiter]/[class:com.guestservice.GuestServiceApplicationTests]/[method:addGuestTest()]"/>
-    <testcase name="deleteGuestTest" classname="com.guestservice.GuestServiceApplicationTests" time="0.006" displayname="deleteGuestTest()" uniqueid="[engine:junit-jupiter]/[class:com.guestservice.GuestServiceApplicationTests]/[method:deleteGuestTest()]"/>
-    <testcase name="ShowGuestByIdTest" classname="com.guestservice.GuestServiceApplicationTests" time="0.009" displayname="ShowGuestByIdTest()" uniqueid="[engine:junit-jupiter]/[class:com.guestservice.GuestServiceApplicationTests]/[method:ShowGuestByIdTest()]"/>
-  </testsuite>
-</testrun>

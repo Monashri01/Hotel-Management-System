@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="StaffServiceApplicationTests" project="Staff-Service" tests="3" started="3" failures="0" errors="0" ignored="0">
-  <testsuite name="com.staff.StaffServiceApplicationTests" time="0.039" displayname="StaffServiceApplicationTests" uniqueid="[engine:junit-jupiter]/[class:com.staff.StaffServiceApplicationTests]">
-    <testcase name="updateStaffTest" classname="com.staff.StaffServiceApplicationTests" time="0.022" displayname="updateStaffTest()" uniqueid="[engine:junit-jupiter]/[class:com.staff.StaffServiceApplicationTests]/[method:updateStaffTest()]"/>
-    <testcase name="ShowAllStaffTest" classname="com.staff.StaffServiceApplicationTests" time="0.009" displayname="ShowAllStaffTest()" uniqueid="[engine:junit-jupiter]/[class:com.staff.StaffServiceApplicationTests]/[method:ShowAllStaffTest()]"/>
-    <testcase name="addStaffTest" classname="com.staff.StaffServiceApplicationTests" time="0.005" displayname="addStaffTest()" uniqueid="[engine:junit-jupiter]/[class:com.staff.StaffServiceApplicationTests]/[method:addStaffTest()]"/>
-  </testsuite>
-</testrun>

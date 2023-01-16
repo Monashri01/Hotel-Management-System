@@ -1,5 +1,0 @@
-package com.rate.service.repository;
-
-public interface RateRepository {
-
-}

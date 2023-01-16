@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\smonashr\Downloads\sts-4.16.1.RELEASE\Hotel-Management-System\Payment-Service"/>
+			<item value="C:\Users\smonashr\Downloads\sts-4.16.1.RELEASE\Hotel-Management-System\PaymentService"/>
 			<item value="C:\Users\smonashr\Downloads\sts-4.16.1.RELEASE\Hotel-Management-System\Auth-Service"/>
 			<item value="C:\Users\smonashr\Downloads\sts-4.16.1.RELEASE\Hotel-Management-System\Receptionist"/>
 			<item value="C:\Users\smonashr\Downloads\sts-4.16.1.RELEASE\Hotel-Management-System\ManagerEndUser"/>

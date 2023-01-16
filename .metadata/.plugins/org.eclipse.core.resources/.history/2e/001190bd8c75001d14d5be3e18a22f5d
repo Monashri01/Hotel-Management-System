@@ -1,5 +1,0 @@
-package com.rate.service.service;
-
-public interface RateService {
-
-}

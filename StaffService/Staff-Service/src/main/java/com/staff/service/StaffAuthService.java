@@ -22,12 +22,12 @@ public class StaffAuthService
 	        }
 	        String role = authResponse.getRole().substring(5);
 	        if (role.equals("MANAGER"))
-
-
-
 	           return true;
-	        else
-	            return false;
+	        else if (role.equals("OWNER"))
+				return true;
+			else
+
+				return false;
 	}
 }
 

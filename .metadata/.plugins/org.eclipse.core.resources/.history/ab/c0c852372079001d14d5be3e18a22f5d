@@ -1,5 +1,0 @@
-package com.manager.feignclient;
-
-public interface StaffAuthClient {
-
-}

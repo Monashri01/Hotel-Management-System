@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="RoomServiceApplicationTests" project="RoomService" tests="4" started="4" failures="0" errors="0" ignored="0">
-  <testsuite name="com.roomservice.RoomServiceApplicationTests" time="0.076" displayname="RoomServiceApplicationTests" uniqueid="[engine:junit-jupiter]/[class:com.roomservice.RoomServiceApplicationTests]">
-    <testcase name="updateRoomTest" classname="com.roomservice.RoomServiceApplicationTests" time="0.046" displayname="updateRoomTest()" uniqueid="[engine:junit-jupiter]/[class:com.roomservice.RoomServiceApplicationTests]/[method:updateRoomTest()]"/>
-    <testcase name="showRoomDetailsByIdTest" classname="com.roomservice.RoomServiceApplicationTests" time="0.007" displayname="showRoomDetailsByIdTest()" uniqueid="[engine:junit-jupiter]/[class:com.roomservice.RoomServiceApplicationTests]/[method:showRoomDetailsByIdTest()]"/>
-    <testcase name="ShowAllRoomTest" classname="com.roomservice.RoomServiceApplicationTests" time="0.007" displayname="ShowAllRoomTest()" uniqueid="[engine:junit-jupiter]/[class:com.roomservice.RoomServiceApplicationTests]/[method:ShowAllRoomTest()]"/>
-    <testcase name="addRoomDetailsTest" classname="com.roomservice.RoomServiceApplicationTests" time="0.007" displayname="addRoomDetailsTest()" uniqueid="[engine:junit-jupiter]/[class:com.roomservice.RoomServiceApplicationTests]/[method:addRoomDetailsTest()]"/>
-  </testsuite>
-</testrun>

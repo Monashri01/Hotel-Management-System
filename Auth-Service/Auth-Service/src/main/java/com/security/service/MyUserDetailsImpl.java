@@ -9,15 +9,17 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
 
 import com.security.entity.User;
 
+@SuppressWarnings("serial")
 public class MyUserDetailsImpl implements UserDetails
 {
     private String userName;
 	private String password;
 	private boolean active;
+	@SuppressWarnings("unused")
 	private String role;
 	private List<GrantedAuthority> authorities;
 	
